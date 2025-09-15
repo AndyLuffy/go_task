@@ -12,7 +12,7 @@ import (
 题目 ：设计一个任务调度器，接收一组任务（可以用函数表示），并使用协程并发执行这些任务，同时统计每个任务的执行时间。
 考察点 ：协程原理、并发任务调度。
 */
-func main() {
+/*func main() {
 
 	tasks := []Task{
 		{ID: 0, Function: func() { time.Sleep(1 * time.Second) }},
@@ -30,7 +30,7 @@ func main() {
 			result.Duration)
 	}
 
-}
+}*/
 
 func goroutine() {
 	go print1()
