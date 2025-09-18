@@ -1,4 +1,4 @@
-package main
+package task_1
 
 //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数
 

@@ -1,4 +1,4 @@
-package main
+package task_1
 
 /*
  136. 只出现一次的数字：

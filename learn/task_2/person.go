@@ -1,4 +1,4 @@
-package main
+package task_2
 
 import "fmt"
 
@@ -22,7 +22,7 @@ func (e Employee) PrintInfo() {
 		e.Age)
 }
 
-func main() {
+/*func main() {
 	emp := Employee{
 		Person: Person{
 			Name: "张三",
@@ -31,4 +31,4 @@ func main() {
 		EmployeeID: "E1001",
 	}
 	emp.PrintInfo()
-}
+}*/

@@ -1,4 +1,4 @@
-package main
+package task_1
 
 /*
 字符串
