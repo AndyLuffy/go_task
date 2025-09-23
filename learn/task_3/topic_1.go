@@ -1,7 +1,8 @@
 package task_3
 
 import (
-	"gorm.io/driver/mysql"
+	"fmt"
+
 	"gorm.io/gorm"
 )
 
@@ -21,7 +22,7 @@ type Student struct {
 	Grade string
 }
 
-func Insert() {
+func Insert(db *gorm.DB) {
 
 	/* sutdent:= Student{
 		Name:  "张三",
@@ -29,11 +30,32 @@ func Insert() {
 		Grade: "三年级",
 	}*/
 
-	dsn := "root:admin@123456@tcp(192.168.3.59:3306)/gorm?charset=utf8mb4&parseTime=True&loc=Local"
+	/*dsn := "root:admin@123456@tcp(192.168.3.59:3306)/gorm?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic(err)
-	}
-	db.AutoMigrate(&Student{})
+	}*/
+	//db.AutoMigrate(&Student{})
+	student := Student{Name: "李四", Age: 20, Grade: "三年级"}
+	db.Create(&student)
+}
 
+func Select(db *gorm.DB) {
+	var students []Student
+	db.Debug().Where("age > ?", 18).Find(&students)
+	fmt.Println(students)
+}
+
+func Update(db *gorm.DB) {
+	student := Student{
+		Name:  "张三",
+		Grade: "四年级",
+	}
+	db.Debug().Model(&Student{}).Where("name = ?", student.Name).Updates(student)
+
+}
+
+func Delete(db *gorm.DB) {
+
+	db.Debug().Where("age < ?", 15).Delete(&Student{})
 }
