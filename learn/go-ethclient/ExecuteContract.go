@@ -31,8 +31,8 @@ func ExecuteContract(client *ethclient.Client, privateKey *ecdsa.PrivateKey) {
 	var key [32]byte
 	var value [32]byte
 
-	copy(key[:], []byte("demo_save_key"))
-	copy(value[:], []byte("demo_save_value1111122"))
+	copy(key[:], []byte("demo_save_key_andy"))
+	copy(value[:], []byte("demo_save_value_huang"))
 
 	opt, err := bind.NewKeyedTransactorWithChainID(privateKey, big.NewInt(11155111))
 	if err != nil {
